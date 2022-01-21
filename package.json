@@ -1,0 +1,25 @@
+{
+    "name"          : "@gapit/node-red-contrib-gapit-results",
+    "version"       : "0.1.0",
+    "description"   : "A Node-RED node which converts the msg.gapit_results property (e.g. from gapit-snmp) into the format required by the 'influx batch' node (from node-red-contrib-influxdb).",
+    "dependencies"  : {
+    },
+    "repository" : {
+        "type":"git",
+        "url":"https://github.com/gapitio/node-red-contrib-gapit-results.git"
+    },
+    "license": "Apache-2.0",
+    "keywords": [ "node-red", "gapit" ],
+    "node-red": {
+        "nodes": {
+            "gapit-results-to-influx-batch": "gapit-results.js"
+        }
+    },
+    "author": {
+        "name": "Sverre Johan Tøvik",
+        "email": "sjt@gapit.io",
+        "url": "https://gapit.io"
+    },
+    "contributors": [
+    ]
+}
