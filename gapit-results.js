@@ -6,6 +6,7 @@ module.exports = function (RED) {
         RED.nodes.createNode(this,config);
 
         this.use_timestamp_from_msg = config.use_timestamp_from_msg;
+        this.escape_measurement_space = config.escape_measurement_space;
         if (config.timestamp_property !== undefined) {
             this.timestamp_property = config.timestamp_property.trim();
         }
@@ -32,6 +33,9 @@ module.exports = function (RED) {
                         // prepare object for measurement
                         var measurement_tmp = {}
                         measurement_tmp.measurement = groups[group_idx]["group_name"];
+                        if (node.escape_measurement_space) {
+                            measurement_tmp.measurement = measurement_tmp.measurement.replace(/ /g, "\\ ");
+                        }
                         measurement_tmp.fields = {}
                         measurement_tmp.tags = JSON.parse(JSON.stringify(msg.db_tags)); // copy object
                         measurement_tmp.tags[msg.tagname_device_name] = groups_key;

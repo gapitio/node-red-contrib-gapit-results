@@ -5,7 +5,8 @@
         defaults: {
             use_timestamp_from_msg: {value: true}, 
             timestamp_property: {value: "ts", required: true}, 
-            name: {value:""}
+            name: {value:""},
+            escape_measurement_space: {value: false}
         },
         inputs:1,
         outputs:1,
@@ -28,6 +29,10 @@
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-escape_measurement_space"><i class="fa fa-remove"></i> Escape spaces in measurement name</label>
+        <input type="checkbox" id="node-input-escape_measurement_space" />
     </div>
 </script>
 
